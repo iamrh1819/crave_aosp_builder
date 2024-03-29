@@ -269,7 +269,7 @@ jobs:
         fi \
 
         # Sync the repositories
-        /opt/crave/resync.sh  && \
+        repo sync -c -j4 --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync  && \
 
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \

@@ -159,19 +159,19 @@ jobs:
             if [ "${{ github.event.inputs.BUILD_DIFFERENT_ROM }}" == "echo 'Build Starting!'" ]; then
               case "${{ github.event.inputs.BASE_PROJECT }}" in
                   "ArrowOS 13.1")
-                    repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 --depth=1
+                    repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1
                   ;;
                   "DerpFest 13.0")
-                    repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 --depth=1
+                    repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13
                   ;;
                   "LineageOS 21.0")
-                    repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
+                    repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
                   ;;
                   "LineageOS 20.0")
-                    repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1
+                    repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
                   ;;
                   "CipherOS 14")
-                    repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1
+                    repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs
                   ;;
               esac
              else
@@ -221,24 +221,24 @@ jobs:
         cd $PROJECTFOLDER
         case "${{ github.event.inputs.BASE_PROJECT }}" in
           "ArrowOS 13.1")
-            repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 --depth=1
-            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 --depth=1"
+            repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1
+            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1"
           ;;
           "DerpFest 13.0")
-            repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 --depth=1
-            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 --depth=1"
+            repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13
+            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13"
           ;;
           "LineageOS 21.0")
-            repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
-            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1"
+            repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
+            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs"
           ;;
           "LineageOS 20.0")
-            repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs --depth=1
-            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1"
+            repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs
+            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs"
           ;;
           "CipherOS 14")
-            repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1
-            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1"
+            repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs
+            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs"
           ;;
         esac
         if [ "${{ github.event.inputs.BUILD_DIFFERENT_ROM }}" == "echo 'Build Starting!'" ]; then

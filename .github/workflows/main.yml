@@ -44,6 +44,10 @@ on:
         description: "Product to build:"
         required: true
         default: "lineage_oxygen"
+      PRODUCT_COMBO:
+        description: "Product combo:"
+        required: false
+        default: 'ap1a'
       BUILD_COMMAND:
         description: 'Command to be used for compiling:'
         required: true
@@ -274,10 +278,10 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        source build/envsetup.sh && \
+        . build/envsetup.sh && \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.PRODUCT_COMBO }}-${{ github.event.inputs.BUILD_TYPE }} && \
         m installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
 

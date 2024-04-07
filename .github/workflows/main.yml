@@ -269,12 +269,13 @@ jobs:
         fi \
 
         # Sync the repositories
-        repo sync -c -j4 --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \
+        # repo sync -c -j4 --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
+        /opt/crave/resync.sh && \
 
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        . build/envsetup.sh && \
+        source build/envsetup.sh && \
 
         # Build the ROM
         lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \

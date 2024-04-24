@@ -21,6 +21,7 @@ on:
           - 'ArrowOS 13.1'
           - 'DerpFest 13.0'
           - 'CipherOS 14'
+          - 'PixelOS 14'
       BUILD_DIFFERENT_ROM:
         description: "Command to initialize a different 'repo' project:"
         required: false
@@ -161,6 +162,9 @@ jobs:
                   "CipherOS 14")
                     repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1
                   ;;
+                  "PixelOS 14")
+                    repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1
+                  ;;
               esac
              else
                       ${{ github.event.inputs.BUILD_DIFFERENT_ROM }}
@@ -238,6 +242,11 @@ jobs:
           export PROJECTFOLDER="/crave-devspaces/Cipher14"
           export PROJECTID="79"
           export REPO_INIT="repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1"
+        ;;
+        "PixelOS 14")
+          export PROJECTFOLDER="/crave-devspaces/PixelOS14"
+          export PROJECTID="82"
+          export REPO_INIT="repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1"
         ;;
         esac
 

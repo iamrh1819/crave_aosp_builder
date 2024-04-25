@@ -369,7 +369,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export ELIXIR_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
@@ -377,18 +377,18 @@ jobs:
 
         # Build the ROM
         m installclean && \
-        lunch aosp_a10-ap1a-userdebug && \
-        mka bacon && \
-        lunch aosp_a20-ap1a-userdebug && \
-        mka bacon && \
-        lunch aosp_a20e-ap1a-userdebug && \
-        mka bacon && \
-        lunch aosp_a30-ap1a-userdebug && \
-        mka bacon && \
-        lunch aosp_a30s-ap1a-userdebug && \
-        mka bacon && \
-        lunch aosp_a40-ap1a-userdebug && \
-        mka bacon"
+        lunch lineage_a10-ap1a-userdebug && \
+        rise b && \
+        lunch lineage_a20-ap1a-userdebug && \
+        rise b && \
+        lunch lineage_a20e-ap1a-userdebug && \
+        rise b && \
+        lunch lineage_a30-ap1a-userdebug && \
+        rise b && \
+        lunch lineage_a30s-ap1a-userdebug && \
+        rise b && \
+        lunch lineage_a40-ap1a-userdebug && \
+        rise b"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

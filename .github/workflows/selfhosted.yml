@@ -222,7 +222,7 @@ jobs:
         else
           ${{ github.event.inputs.BUILD_DIFFERENT_ROM }}
         fi 
-        git clone ${{ github.event.inputs.LOCAL_MANIFEST }} --depth 1 -b ${{ github.event.inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests && \
+        git clone ${{ github.event.inputs.LOCAL_MANIFEST }} --depth=1 -b ${{ github.event.inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests && \
 
         if [ ! $? == 0 ]; then \
           curl -o .repo/local_manifests ${{ github.event.inputs.LOCAL_MANIFEST }}; \
@@ -239,9 +239,9 @@ jobs:
       REPO_INIT: ${{ needs.prepare.outputs.REPO_INIT }}
 
   build:
-    timeout-minutes: 720      
+    timeout-minutes: 1440
     name: Build using foss.crave.io
-    needs: test 
+    needs: test
     runs-on: self-hosted
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -372,7 +372,7 @@ jobs:
         crave run --no-patch --${CLEAN} "rm -rf .repo/local_manifests/ ${{ github.event.inputs.REMOVALS }} && \
         # Clone local_manifests repository
         $BUILD_DIFFERENT_ROM ; \
-        git clone ${{ github.event.inputs.LOCAL_MANIFEST }} --depth 1 -b ${{ github.event.inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests && \
+        git clone ${{ github.event.inputs.LOCAL_MANIFEST }} --depth=1 -b ${{ github.event.inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests && \
 
         if [ ! $? == 0 ]; then \
           curl -o .repo/local_manifests ${{ github.event.inputs.LOCAL_MANIFEST }}; \
@@ -392,9 +392,9 @@ jobs:
 
         # Build the ROM
         lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
-        make installclean && \
+        m installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
-      timeout-minutes: 720
+      timeout-minutes: 1440
 
       # Send Build 'status' notification
     - name: Telegram Notification

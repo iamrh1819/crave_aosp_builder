@@ -393,17 +393,17 @@ jobs:
 
         # Build the ROM
         m installclean && \
-        lunch aosp_a10-userdebug && \
+        lunch aosp_a10-ap1a-userdebug && \
         mka bacon && \
-        lunch aosp_a20-userdebug && \
+        lunch aosp_a20-ap1a-userdebug && \
         mka bacon && \
-        lunch aosp_a20e-userdebug && \
+        lunch aosp_a20e-ap1a-userdebug && \
         mka bacon && \
-        lunch aosp_a30-userdebug && \
+        lunch aosp_a30-ap1a-userdebug && \
         mka bacon && \
-        lunch aosp_a30s-userdebug && \
+        lunch aosp_a30s-ap1a-userdebug && \
         mka bacon && \
-        lunch aosp_a40-userdebug && \
+        lunch aosp_a40-ap1a-userdebug && \
         mka bacon"
       timeout-minutes: 1440
 

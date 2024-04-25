@@ -377,17 +377,17 @@ jobs:
 
         # Build the ROM
         m installclean && \
-        lunch lineage_a10-ap1a-userdebug && \
+        lunch rising_a10-ap1a-userdebug && \
         rise b && \
-        lunch lineage_a20-ap1a-userdebug && \
+        lunch rising_a20-ap1a-userdebug && \
         rise b && \
-        lunch lineage_a20e-ap1a-userdebug && \
+        lunch rising_a20e-ap1a-userdebug && \
         rise b && \
-        lunch lineage_a30-ap1a-userdebug && \
+        lunch rising_a30-ap1a-userdebug && \
         rise b && \
-        lunch lineage_a30s-ap1a-userdebug && \
+        lunch rising_a30s-ap1a-userdebug && \
         rise b && \
-        lunch lineage_a40-ap1a-userdebug && \
+        lunch rising_a40-ap1a-userdebug && \
         rise b"
       timeout-minutes: 1440
 

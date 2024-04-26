@@ -369,26 +369,26 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export ELIXIR_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export BANANA_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch aosp_a10-userdebug && \
+        lunch banana_a10-userdebug && \
         m installclean && \
-        mka bacon && \
-        lunch aosp_a20-userdebug && \
-        mka bacon && \
-        lunch aosp_a20e-userdebug && \
-        mka bacon && \
-        lunch aosp_a30-userdebug && \
-        mka bacon && \
-        lunch aosp_a30s-userdebug && \
-        mka bacon && \
-        lunch aosp_a40-userdebug && \
-        mka bacon"
+        m banana && \
+        lunch banana_a20-userdebug && \
+        m banana && \
+        lunch banana_a20e-userdebug && \
+        m banana && \
+        lunch banana_a30-userdebug && \
+        m banana && \
+        lunch banana_a30s-userdebug && \
+        m banana && \
+        lunch banana_a40-userdebug && \
+        m banana"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

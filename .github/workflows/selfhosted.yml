@@ -369,25 +369,25 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export CHERISH_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export PARASITE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch cherish_a10-ap1a-userdebug && \
+        lunch aosp_a10-ap1a-userdebug && \
         m installclean && \
         mka bacon && \
-        lunch cherish_a20-ap1a-userdebug && \
+        lunch aosp_a20-ap1a-userdebug && \
         mka bacon && \
-        lunch cherish_a20e-ap1a-userdebug && \
+        lunch aosp_a20e-ap1a-userdebug && \
         mka bacon && \
-        lunch cherish_a30-ap1a-userdebug && \
+        lunch aosp_a30-ap1a-userdebug && \
         mka bacon && \
-        lunch cherish_a30s-ap1a-userdebug && \
+        lunch aosp_a30s-ap1a-userdebug && \
         mka bacon && \
-        lunch cherish_a40-ap1a-userdebug && \
+        lunch aosp_a40-ap1a-userdebug && \
         mka bacon"
       timeout-minutes: 1440
 

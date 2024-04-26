@@ -376,18 +376,18 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
+        lunch rising_a10-ap1a-userdebug && \
         m installclean && \
-        lunch rising_a10-userdebug && \
         rise b && \
-        lunch rising_a20-userdebug && \
+        lunch rising_a20-ap1a-userdebug && \
         rise b && \
-        lunch rising_a20e-userdebug && \
+        lunch rising_a20e-ap1a-userdebug && \
         rise b && \
-        lunch rising_a30-userdebug && \
+        lunch rising_a30-ap1a-userdebug && \
         rise b && \
-        lunch rising_a30s-userdebug && \
+        lunch rising_a30s-ap1a-userdebug && \
         rise b && \
-        lunch rising_a40-userdebug && \
+        lunch rising_a40-ap1a-userdebug && \
         rise b"
       timeout-minutes: 1440
 

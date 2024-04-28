@@ -369,26 +369,26 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export BANANA_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export CORVUS_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch banana_a10-userdebug && \
+        lunch corvus_a10-userdebug && \
         m installclean && \
-        m banana && \
-        lunch banana_a20-userdebug && \
-        m banana && \
-        lunch banana_a20e-userdebug && \
-        m banana && \
-        lunch banana_a30-userdebug && \
-        m banana && \
-        lunch banana_a30s-userdebug && \
-        m banana && \
-        lunch banana_a40-userdebug && \
-        m banana"
+        make corvus && \
+        lunch corvus_a20-userdebug && \
+        make corvus && \
+        lunch corvus_a20e-userdebug && \
+        make corvus && \
+        lunch corvus_a30-userdebug && \
+        make corvus && \
+        lunch corvus_a30s-userdebug && \
+        make corvus && \
+        lunch corvus_a40-userdebug && \
+        make corvus"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

@@ -43,23 +43,7 @@ on:
         description: "Device's codename:"
         required: true
         default: "oxygen"
-      PRODUCT_NAME:
-        description: "Product to build:"
-        required: true
-        default: "lineage_oxygen"
-      BUILD_COMMAND:
-        description: 'Command to be used for compiling:'
-        required: true
-        default: 'mka bacon'
-      BUILD_TYPE:
-        description: 'Type of build:'
-        required: true
-        default: 'userdebug'
-        type: choice
-        options: 
-        - 'eng'
-        - 'userdebug'
-        - 'user' 
+      
       CLEAN_BUILD:
         description: 'Build with a clean workspace?'
         required: true
@@ -385,15 +369,26 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export VOLTAGE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        lunch voltage_a10-ap1a-userdebug && \
         m installclean && \
-        ${{ github.event.inputs.BUILD_COMMAND }}"
+        brunch a10 && \
+        lunch voltage_a20-ap1a-userdebug && \
+        brunch a20 && \
+        lunch voltage_a20e-ap1a-userdebug && \
+        brunch a20e && \
+        lunch voltage_a30-ap1a-userdebug && \
+        brunch a30 && \
+        lunch voltage_a30s-ap1a-userdebug && \
+        brunch a30s && \
+        lunch voltage_a10-ap1a-userdebug && \
+        brunch a40"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

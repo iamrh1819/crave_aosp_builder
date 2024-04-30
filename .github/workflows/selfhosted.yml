@@ -387,7 +387,7 @@ jobs:
         brunch a30 && \
         lunch voltage_a30s-ap1a-userdebug && \
         brunch a30s && \
-        lunch voltage_a10-ap1a-userdebug && \
+        lunch voltage_a40-ap1a-userdebug && \
         brunch a40"
       timeout-minutes: 1440
 

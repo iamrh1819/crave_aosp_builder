@@ -376,10 +376,8 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch voltage_a10-ap1a-userdebug && \
-        m installclean && \
-        brunch a10 && \
         lunch voltage_a20-ap1a-userdebug && \
+        m installclean && \
         brunch a20 && \
         lunch voltage_a20e-ap1a-userdebug && \
         brunch a20e && \

@@ -51,15 +51,7 @@ on:
         description: 'Command to be used for compiling:'
         required: true
         default: 'mka bacon'
-      BUILD_TYPE:
-        description: 'Type of build:'
-        required: true
-        default: 'userdebug'
-        type: choice
-        options: 
-        - 'eng'
-        - 'userdebug'
-        - 'user' 
+      
       CLEAN_BUILD:
         description: 'Build with a clean workspace?'
         required: true
@@ -391,7 +383,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        lunch ${{ github.event.inputs.PRODUCT_NAME }} && \
         m installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
       timeout-minutes: 1440

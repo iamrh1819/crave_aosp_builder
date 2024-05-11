@@ -385,6 +385,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export VOLTAGE_MAINTAINER=Ʀᴀ㉿ɪƁ  \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \

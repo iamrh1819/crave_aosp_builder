@@ -392,9 +392,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        lunch voltage_a10-ap1a && \
         make installclean && \
-        ${{ github.event.inputs.BUILD_COMMAND }}"
+        brunch a10"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

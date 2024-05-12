@@ -385,15 +385,26 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export KANGED MAINTAINER=
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        embark a10 userdebug && \
         make installclean && \
-        ${{ github.event.inputs.BUILD_COMMAND }}"
+        m && \
+        embark a20 userdebug && \
+        m && \
+        embark a20e userdebug && \
+        m && \
+        embark a30 userdebug && \
+        m && \
+        embark a30s userdebug && \
+        m && \
+        embark a40 userdebug && \
+        m"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

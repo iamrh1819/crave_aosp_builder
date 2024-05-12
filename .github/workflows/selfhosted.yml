@@ -392,7 +392,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch voltage_a10-ap1a && \
+        lunch voltage_a10-ap1a-userdebug && \
         make installclean && \
         brunch a10"
       timeout-minutes: 1440

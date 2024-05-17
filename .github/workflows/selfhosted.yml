@@ -376,18 +376,18 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch evolution_a10-userdebug && \
+        lunch lineage_a10-user && \
         make installclean && \
         m evolution && \
-        lunch evolution_a20-userdebug && \
+        lunch lineage_a20-user && \
         m evolution && \
-        lunch evolution_a20e-userdebug && \
+        lunch lineage_a20e-user && \
         m evolution && \
-        lunch evolution_a30-userdebug && \
+        lunch lineage_a30-user && \
         m evolution && \
-        lunch evolution_a30s-userdebug && \
+        lunch lineage_a30s-user && \
         m evolution && \
-        lunch evolution_a40-userdebug && \
+        lunch lineage_a40-user && \
         m evolution"
       timeout-minutes: 1440
 

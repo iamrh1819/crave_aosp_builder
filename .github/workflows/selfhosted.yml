@@ -391,15 +391,31 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export ALPHA_MAINTAINER= ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        lunch lineage_a10-ap1a-user && \
         make installclean && \
-        ${{ github.event.inputs.BUILD_COMMAND }}"
+        brunch a10 && \
+        lunch lineage_a20-ap1a-user && \
+        make installclean && \
+        brunch a20 && \
+        lunch lineage_a20e-ap1a-user && \
+        make installclean && \
+        brunch a20e && \
+        lunch lineage_a30-ap1a-user && \
+        make installclean && \
+        brunch a30 && \
+        lunch lineage_a30s-ap1a-user && \
+        make installclean && \
+        brunch a30s && \
+        lunch lineage_a40-ap1a-user && \
+        make installclean && \
+        brunch a40"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

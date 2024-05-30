@@ -375,7 +375,8 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        source build/envsetup.sh && \
+        export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        . build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \

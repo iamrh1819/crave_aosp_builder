@@ -44,23 +44,7 @@ on:
         description: "Device's codename:"
         required: true
         default: "oxygen"
-      PRODUCT_NAME:
-        description: "Product to build:"
-        required: true
-        default: "lineage_oxygen"
-      BUILD_COMMAND:
-        description: 'Command to be used for compiling:'
-        required: true
-        default: 'mka bacon'
-      BUILD_TYPE:
-        description: 'Type of build:'
-        required: true
-        default: 'userdebug'
-        type: choice
-        options: 
-        - 'eng'
-        - 'userdebug'
-        - 'user' 
+      
       CLEAN_BUILD:
         description: 'Build with a clean workspace?'
         required: true
@@ -397,9 +381,24 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        riseup a10 userdebug && \
         make installclean && \
-        ${{ github.event.inputs.BUILD_COMMAND }}"
+        rise b && \
+        riseup a20 userdebug && \
+        make installclean && \
+        rise b && \
+        riseup a20e userdebug && \
+        make installclean && \
+        rise b && \
+        riseup a30 userdebug && \
+        make installclean && \
+        rise b && \
+        riseup a30s userdebug && \
+        make installclean && \
+        rise b && \
+        riseup a40 userdebug && \
+        make installclean && \
+        rise b"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

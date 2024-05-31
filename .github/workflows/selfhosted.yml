@@ -405,10 +405,10 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export SAKURA_MAINTAINER= ; \
+        export SAKURA_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export WITH_GMS=true ; \
         export TARGET_CORE_GMS=true ; \
-        source build/envsetup.sh && \
+        . build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \

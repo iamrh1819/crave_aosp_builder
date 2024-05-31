@@ -44,23 +44,7 @@ on:
         description: "Device's codename:"
         required: true
         default: "oxygen"
-      PRODUCT_NAME:
-        description: "Product to build:"
-        required: true
-        default: "lineage_oxygen"
-      BUILD_COMMAND:
-        description: 'Command to be used for compiling:'
-        required: true
-        default: 'mka bacon'
-      BUILD_TYPE:
-        description: 'Type of build:'
-        required: true
-        default: 'userdebug'
-        type: choice
-        options: 
-        - 'eng'
-        - 'userdebug'
-        - 'user' 
+      
       CLEAN_BUILD:
         description: 'Build with a clean workspace?'
         required: true

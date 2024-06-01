@@ -389,9 +389,9 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export SAKURA_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export MATRIXX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export WITH_GMS=true ; \
-        export TARGET_CORE_GMS=true ; \
+        export WITH_GAPPS=true ; \
         . build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
@@ -400,22 +400,22 @@ jobs:
         # Build the ROM
         lunch lineage_a10-ap1a-user && \
         make installclean && \
-        mka bacon && \
+        brunch a10 && \
         lunch lineage_a20-ap1a-user && \
         make installclean && \
-        mka bacon && \
+        brunch a20 && \
         lunch lineage_a20e-ap1a-user && \
         make installclean && \
-        mka bacon && \
+        brunch a20e && \
         lunch lineage_a30-ap1a-user && \
         make installclean && \
-        mka bacon && \
+        brunch a30 && \
         lunch lineage_a30s-ap1a-user && \
         make installclean && \
-        mka bacon && \
+        brunch a30s && \
         lunch lineage_a40-ap1a-user && \
         make installclean && \
-        mka bacon"
+        brunch a40"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

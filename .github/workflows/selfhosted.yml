@@ -156,7 +156,7 @@ jobs:
         esac
 
         if [[ ${{ github.event.inputs.PRODUCT_NAME }} == *_* ]]; then
-          LUNCH="lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }}"
+          LUNCH=""
         else
           LUNCH="breakfast ${{ github.event.inputs.PRODUCT_NAME }} ${{ github.event.inputs.BUILD_TYPE }}"
         fi

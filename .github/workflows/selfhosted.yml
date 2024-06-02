@@ -419,24 +419,24 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch droidx_a10-ap1a-userdebug && \
+        lunch droidx_a10-ap1a-user && \
         make installclean && \
-        make bacon && \
-        lunch droidx_a20-ap1a-userdebug && \
+        m bacon && \
+        lunch droidx_a20-ap1a-user && \
         make installclean && \
-        make bacon && \
-        lunch droidx_a20e-ap1a-userdebug && \
+        m bacon && \
+        lunch droidx_a20e-ap1a-user && \
         make installclean && \
-        make bacon && \
-        lunch droidx_a30-ap1a-userdebug && \
+        m bacon && \
+        lunch droidx_a30-ap1a-user && \
         make installclean && \
-        make bacon && \
-        lunch droidx_a30s-ap1a-userdebug && \
+        m bacon && \
+        lunch droidx_a30s-ap1a-user && \
         make installclean && \
-        make bacon && \
-        lunch droidx_a40-ap1a-userdebug && \
+        m bacon && \
+        lunch droidx_a40-ap1a-user && \
         make installclean && \
-        make bacon"
+        m bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

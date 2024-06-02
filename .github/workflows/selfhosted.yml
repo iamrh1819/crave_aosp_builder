@@ -155,18 +155,11 @@ jobs:
         ;;
         esac
 
-        if [[ ${{ github.event.inputs.PRODUCT_NAME }} == *_* ]]; then
-          LUNCH=""
-        else
-          LUNCH="breakfast ${{ github.event.inputs.PRODUCT_NAME }} ${{ github.event.inputs.BUILD_TYPE }}"
-        fi
-
+        
         echo "Building on ${{ github.event.inputs.BASE_PROJECT }} project"
         echo "PROJECTFOLDER=$PROJECTFOLDER" >> "$GITHUB_OUTPUT"
         echo "PROJECTID=$PROJECTID"  >> "$GITHUB_OUTPUT"
         echo "REPO_INIT=$REPO_INIT" >> "$GITHUB_OUTPUT"
-        echo "LUNCH=$LUNCH" >> "$GITHUB_ENV"
-        echo "LUNCH=$LUNCH" >> "$GITHUB_OUTPUT"
 
     - name: Display Run Parameters # Credit to azwhikaru for this part
       run: |
@@ -185,7 +178,7 @@ jobs:
       PROJECTFOLDER: ${{ steps.proj-variables.outputs.PROJECTFOLDER }}
       PROJECTID: ${{ steps.proj-variables.outputs.PROJECTID }}
       REPO_INIT: ${{ steps.proj-variables.outputs.REPO_INIT }}
-      LUNCH: ${{ steps.proj-variables.outputs.LUNCH }}
+      
 
   test:
     name: Test Local Manifests

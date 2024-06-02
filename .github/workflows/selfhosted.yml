@@ -401,34 +401,34 @@ jobs:
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
-        export BUILD_HOSTNAME=iamrh1819 ; \
+        export BUILD_HOSTNAME=crave ; \
         export WITH_GAPPS=true ; \
         export WITH_GMS=true ; \
-        export DROIDX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export DERP_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         . build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch droidx_a10-ap1a-user && \
+        lunch derp_a10-user && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a20-ap1a-user && \
+        mka derp && \
+        lunch derp_a20-user && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a20e-ap1a-user && \
+        mka derp && \
+        lunch derp_a20e-user && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a30-ap1a-user && \
+        mka derp && \
+        lunch derp_a30-user && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a30s-ap1a-user && \
+        mka derp && \
+        lunch derp_a30s-user && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a40-ap1a-user && \
+        mka derp && \
+        lunch derp_a40-user && \
         make installclean && \
-        m bacon"
+        mka derp"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

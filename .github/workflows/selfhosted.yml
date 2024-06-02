@@ -412,7 +412,7 @@ jobs:
         export BUILD_HOSTNAME=iamrh1819 ; \
         export WITH_GAPPS=true ; \
         export WITH_GMS=true ; \
-        export DROIDX_MAINTAINER=
+        export DROIDX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         . build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \

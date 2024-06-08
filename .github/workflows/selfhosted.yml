@@ -396,10 +396,11 @@ jobs:
         # Sync the repositories
         curl https://raw.githubusercontent.com/sounddrill31/docker-images/04449990912b9d7ee594193883740037f0ac80a7/aosp/common/resync.sh | bash  && \
         repo forall -c "git lfs install && git lfs pull && git lfs checkout"
+        
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export GENESIS_MAINTAINER= ; \
+        export GENESIS_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \

@@ -394,14 +394,13 @@ jobs:
         fi \
         
         # Sync the repositories
-        /opt/crave/resync.sh  && \
+        /opt/crave/resync.sh && \
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        source build/envsetup.sh && \
-        repo forall -c 'git lfs install && git lfs pull && git lfs checkout' && \
+        . build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \

@@ -399,11 +399,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export GENESIS_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export WITH_GAPPS=false ; \
-        export WITH_GMS=false ; \
-        export TARGET_CORE_GAPPS=true ; \
-        export TARGET_CORR_GMS=true ; \
+        export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
         repo forall -c 'git lfs install && git lfs pull && git lfs checkout' && \
 
@@ -411,24 +407,19 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch genesis_a10-ap1a-user && \
+        riseup a10 user && \
         make installclean && \
-        mka genesis && \
-        lunch genesis_a20-ap1a-user && \
-        make installclean && \
-        mka genesis && \
-        lunch genesis_a20e-ap1a-user && \
-        make installclean && \
-        mka genesis && \
-        lunch genesis_a30-ap1a-user && \
-        make installclean && \
-        mka genesis && \
-        lunch genesis_a30s-ap1a-user && \
-        make installclean && \
-        mka genesis && \
-        lunch genesis_a40-ap1a-user && \
-        make installclean && \
-        mka genesis"
+        rise sb && \
+        riseup a20 user && \
+        rise sb && \
+        riseup a20e user && \
+        rise sb && \
+        riseup a30 user && \
+        rise sb && \
+        riseup a30s user && \
+        rise sb && \
+        riseup a40 user && \
+        rise sb"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

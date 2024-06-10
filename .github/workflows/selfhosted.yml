@@ -401,6 +401,7 @@ jobs:
         export BUILD_HOSTNAME=crave ; \
         export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         . build/envsetup.sh && \
+        genkeys && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
@@ -408,17 +409,17 @@ jobs:
         # Build the ROM
         riseup a10 user && \
         make installclean && \
-        rise sb || rise b && \
+        rise b && \
         riseup a20 user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a20e user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a30 user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a30s user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a40 user && \
-        rise sb || rise b"
+        rise b"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

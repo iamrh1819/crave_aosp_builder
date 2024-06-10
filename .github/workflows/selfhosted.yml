@@ -399,7 +399,10 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export XDROID_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export WITH_GAPPS=false ; \
+        export WITH_GMS=false ; \
+        export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         . build/envsetup.sh && \
         
 
@@ -407,19 +410,24 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        riseup a10 user && \
+        lunch xdroid_a10-user && \
         make installclean && \
-        rise b && \
-        riseup a20 user && \
-        rise b && \
-        riseup a20e user && \
-        rise b && \
-        riseup a30 user && \
-        rise b && \
-        riseup a30s user && \
-        rise b && \
-        riseup a40 user && \
-        rise b"
+        make xd && \
+        lunch xdroid_a20-user && \
+        make installclean && \
+        make xd && \
+        lunch xdroid_a20e-user && \
+        make installclean && \
+        make xd && \
+        lunch xdroid_a30-user && \
+        make installclean && \
+        make xd && \
+        lunch xdroid_a30s-user && \
+        make installclean && \
+        make xd && \
+        lunch xdroid_a40-user && \
+        make installclean && \
+        make xd"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

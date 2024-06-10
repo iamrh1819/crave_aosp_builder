@@ -401,7 +401,7 @@ jobs:
         export BUILD_HOSTNAME=crave ; \
         export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         . build/envsetup.sh && \
-        genkeys && \
+        
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \

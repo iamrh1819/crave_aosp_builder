@@ -397,37 +397,8 @@ jobs:
         /opt/crave/resync.sh && \
         
         # Set up build environment
-        export BUILD_USERNAME=${{ github.actor }} ; \
-        export BUILD_HOSTNAME=crave ; \
-        export XDROID_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export WITH_GAPPS=false ; \
-        export WITH_GMS=false ; \
-        export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        . build/envsetup.sh && \
         
-
-        echo "Repository: ${{ github.repository }}"; \
-        echo "Run ID: ${{ github.run_id }}"; \
-
-        # Build the ROM
-        lunch xdroid_a10-user && \
-        make installclean && \
-        make xd && \
-        lunch xdroid_a20-user && \
-        make installclean && \
-        make xd && \
-        lunch xdroid_a20e-user && \
-        make installclean && \
-        make xd && \
-        lunch xdroid_a30-user && \
-        make installclean && \
-        make xd && \
-        lunch xdroid_a30s-user && \
-        make installclean && \
-        make xd && \
-        lunch xdroid_a40-user && \
-        make installclean && \
-        make xd"
+        ./rom-builder.sh a10"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

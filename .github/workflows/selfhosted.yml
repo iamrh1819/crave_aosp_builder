@@ -399,7 +399,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export VOLTAGE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export ORION_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export WITH_GAPPS=true ; \
         export WITH_GMS=true ; \
         export TARGET_CORE_GMS=true ; \
@@ -411,24 +411,24 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch voltage_a10-user && \
+        lunch orion_a10-ap1a-user && \
         make installclean && \
-        brunch a10 && \
-        lunch voltage_a20-user && \
+        mka space && \
+        lunch orion_a20-ap1a-user && \
         make installclean && \
-        brunch a20 && \
-        lunch voltage_a20e-user && \
+        mka space && \
+        lunch orion_a20e-ap1a-user && \
         make installclean && \
-        brunch a20e && \
-        lunch voltage_a30-user && \
+        mka space && \
+        lunch orion_a30-ap1a-user && \
         make installclean && \
-        brunch a30 && \
-        lunch voltage_a30s-user && \
+        mka space && \
+        lunch orion_a30s-ap1a-user && \
         make installclean && \
-        brunch a30s && \
-        lunch voltage_a40-user && \
+        mka space && \
+        lunch orion_a40-ap1a-user && \
         make installclean && \
-        brunch a40"
+        mka space"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

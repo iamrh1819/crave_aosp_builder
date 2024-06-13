@@ -383,7 +383,7 @@ jobs:
            export CLEAN="clean"
         fi
 
-        crave run --no-patch --${CLEAN} "rm /usr/bin/ccache && \ rm -rf .repo/local_manifests/ ${{ github.event.inputs.REMOVALS }} && \
+        crave run --no-patch --${CLEAN} "rm -rf .repo/local_manifests/ ${{ github.event.inputs.REMOVALS }} && \
         # Clone local_manifests repository
         $BUILD_DIFFERENT_ROM ; \
         git clone ${{ github.event.inputs.LOCAL_MANIFEST }} --depth=1 -b ${{ github.event.inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests && \
@@ -394,6 +394,7 @@ jobs:
         fi \
         
         # Sync the repositories
+        rm -rf /usr/bin/ccache && \ 
         /opt/crave/resync.sh && \
         
         # Set up build environment
@@ -404,6 +405,7 @@ jobs:
         export WITH_GMS=true ; \
         export TARGET_CORE_GMS=true ; \
         export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        rm -rf /usr/bin/ccache && \
         . build/envsetup.sh && \
         
 

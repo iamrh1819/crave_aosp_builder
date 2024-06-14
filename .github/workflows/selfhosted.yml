@@ -443,7 +443,7 @@ jobs:
       continue-on-error: true
       uses: xinthink/action-telegram@v1.1
       with:
-        chatId: 1002146460600
+        chatId: 7166866974
         botToken: 7166866974:AAGV8-SJ26I8-bj4BN8znTCIEb-tr5XsiB0
         jobStatus: ${{ job.status }}
         skipSuccess: false

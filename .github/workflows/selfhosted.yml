@@ -443,7 +443,7 @@ jobs:
       continue-on-error: true
       uses: xinthink/action-telegram@v1.1
       with:
-        chatId: ${{ secrets.TELEGRAM_TO }}
+        chatId: 1002146460600
         botToken: ${{ secrets.TELEGRAM_TOKEN }}
         jobStatus: ${{ job.status }}
         skipSuccess: false

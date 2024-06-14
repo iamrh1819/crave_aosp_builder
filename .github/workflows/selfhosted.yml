@@ -302,8 +302,8 @@ jobs:
       continue-on-error: true
       uses: xinthink/action-telegram@v1.1
       with:
-        chatId: ${{ secrets.TELEGRAM_TO }}
-        botToken: ${{ secrets.TELEGRAM_TOKEN }}
+        chatId: 5345598821
+        botToken: 7166866974:AAGV8-SJ26I8-bj4BN8znTCIEb-tr5XsiB0
         jobStatus: "Build Started"
         skipSuccess: false
 
@@ -443,7 +443,7 @@ jobs:
       continue-on-error: true
       uses: xinthink/action-telegram@v1.1
       with:
-        chatId: 7166866974
+        chatId: 5345598821
         botToken: 7166866974:AAGV8-SJ26I8-bj4BN8znTCIEb-tr5XsiB0
         jobStatus: ${{ job.status }}
         skipSuccess: false

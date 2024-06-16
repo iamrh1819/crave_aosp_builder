@@ -403,34 +403,32 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export SUPERIOR_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export WITH_GMS=true ; \
-        export WITH_GAPPS=true ; \
-        export TARGET_CORE_GMS=true ; \
+        export ETHEREAL_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch superior_a10-user && \
+        lunch ethereal_a10-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch superior_a20-user && \
+        make ethereal && \
+        lunch ethereal_a20-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch superior_a20e-user && \
+        make ethereal && \
+        lunch ethereal_a20e-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch superior_a30-user && \
+        make ethereal && \
+        lunch ethereal_a30-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch superior_a30s-user && \
+        make ethereal && \
+        lunch ethereal_a30s-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch superior_a40-user && \
+        make ethereal && \
+        lunch ethereal_a40-userdebug && \
         make installclean && \
-        m bacon"
+        make ethereal"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

@@ -403,32 +403,32 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export ETHEREAL_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        
+        export INFINITY_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        cd path/to/project/infinity-x
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch ethereal_a10-userdebug && \
+        lunch infinity_a10-userdebug && \
         make installclean && \
-        make ethereal && \
-        lunch ethereal_a20-userdebug && \
+        mka bacon && \
+        lunch infinity_a20-userdebug && \
         make installclean && \
-        make ethereal && \
-        lunch ethereal_a20e-userdebug && \
+        mka bacon && \
+        lunch infinity_a20e-userdebug && \
         make installclean && \
-        make ethereal && \
-        lunch ethereal_a30-userdebug && \
+        mka bacon && \
+        lunch infinity_a30-userdebug && \
         make installclean && \
-        make ethereal && \
-        lunch ethereal_a30s-userdebug && \
+        mka bacon && \
+        lunch infinity_a30s-userdebug && \
         make installclean && \
-        make ethereal && \
-        lunch ethereal_a40-userdebug && \
+        mka bacon && \
+        lunch infinity_a40-userdebug && \
         make installclean && \
-        make ethereal"
+        mka bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

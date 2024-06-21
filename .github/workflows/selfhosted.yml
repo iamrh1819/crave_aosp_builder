@@ -398,37 +398,37 @@ jobs:
         
         # Sync the repositories
         /opt/crave/resync.sh  && \
+        cd vendor/extra && \
+        git lfs pull iode v5.1 && \
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=iamrh1819 ; \
-        export WITH_GAPPS=true ; \
-        export WITH_GMS=true ; \
-        export DROIDX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        . build/envsetup.sh && \
+        
+        source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch droidx_a10-user && \
+        lunch lineage_a10-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a20-user && \
+        mka bacon && \
+        lunch lineage_a20-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a20e-user && \
+        mka bacon && \
+        lunch lineage_a20e-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a30-user && \
+        mka bacon && \
+        lunch lineage_a30-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a30s-user && \
+        mka bacon && \
+        lunch lineage_a30s-userdebug && \
         make installclean && \
-        m bacon && \
-        lunch droidx_a40-user && \
+        mka bacon && \
+        lunch lineage_a40-userdebug && \
         make installclean && \
-        m bacon"
+        mka bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

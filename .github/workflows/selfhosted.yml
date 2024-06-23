@@ -398,7 +398,7 @@ jobs:
         
         # Set up build environment
         
-        ./rom-build.sh a10"
+        ./rom-build.sh a10 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification

@@ -409,31 +409,31 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export AICP_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export ARROW_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch aicp_a10-userdebug && \
+        lunch arrow_a10-userdebug && \
         make installclean && \
-        mka bacon || brunch a10 && \
-        lunch aicp_a20-userdebug && \
+        m bacon && \
+        lunch arrow_a20-userdebug && \
         make installclean && \
-        mka bacon || brunch a10 && \
-        lunch aicp_a20e-userdebug && \
+        m bacon && \
+        lunch arrow_a20e-userdebug && \
         make installclean && \
-        mka bacon || brunch a20e && \
-        lunch aicp_a30-userdebug && \
+        m bacon && \
+        lunch arrow_a30-userdebug && \
         make installclean && \
-        mka bacon || brunch a30 && \
-        lunch aicp_a30s-userdebug && \
+        m bacon && \
+        lunch arrow_a30s-userdebug && \
         make installclean && \
-        mka bacon || brunch a30s && \
-        lunch aicp_a40-userdebug && \
+        m bacon && \
+        lunch arrow_a40-userdebug && \
         make installclean && \
-        mka bacon || brunch a40"
+        m bacon"
         
       timeout-minutes: 1440
 

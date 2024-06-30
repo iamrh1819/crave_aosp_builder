@@ -410,7 +410,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        breakfast a10 user || brunch a10 user"
+        lunch lineage_a10–user && \
+        make installclean && \
+        mka bacon"
         
         
       timeout-minutes: 1440

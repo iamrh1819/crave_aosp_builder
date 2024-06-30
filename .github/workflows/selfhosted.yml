@@ -36,7 +36,7 @@ on:
       LOCAL_MANIFEST:
         description: "Personal local manifest [repository or raw]:"
         required: true
-        default: 'https://github.com/sounddrill31/local_manifests'
+        default: 'https://github.com/iamrh1819/local_manifests'
       LOCAL_MANIFEST_BRANCH:
         description: "Personal local manifest's branch:"
         required: false
@@ -285,7 +285,7 @@ jobs:
       LUNCH: ${{ needs.prepare.outputs.LUNCH }}
 
   build:
-    timeout-minutes: 720      
+    timeout-minutes: 1440      
     name: Build using foss.crave.io
     needs: test 
     runs-on: self-hosted
@@ -453,7 +453,7 @@ jobs:
         $LUNCH && \
         make installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
-      timeout-minutes: 720
+      timeout-minutes: 1440
 
       # Send Build 'status' notification
     - name: Telegram Notification

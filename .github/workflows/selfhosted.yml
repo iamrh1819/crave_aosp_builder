@@ -410,7 +410,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch lineage_a10–user && \
+        breakfast a10 user || brunch a10 user && \
         make installclean && \
         mka bacon"
         

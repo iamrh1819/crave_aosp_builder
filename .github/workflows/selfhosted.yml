@@ -418,11 +418,11 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export WITH_GMS=
-        export WITH_GAPPS=
-        export DEVICE_MAINTAINER=
-        export DERPFEST_MAINTAINER=
-        export DERP_MAINTAINER=
+        export WITH_GMS=false ; \
+        export WITH_GAPPS=false ; \
+        export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export DERPFEST_MAINTAINER=Ʀᴀ㉿ɪƁ ;\
+        export DERP_MAINTAINER=Ʀᴀ㉿ɪƁ;\
         source build/envsetup.sh && \
         
 

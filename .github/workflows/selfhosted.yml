@@ -418,11 +418,8 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export WITH_GMS=false ; \
-        export WITH_GAPPS=false ; \
-        export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export DERPFEST_MAINTAINER=Ʀᴀ㉿ɪƁ ;\
-        export DERP_MAINTAINER=Ʀᴀ㉿ɪƁ;\
+        
+        export MATRIXX_MAINTAINER=Ʀᴀ㉿ɪƁ;\
         source build/envsetup.sh && \
         
 
@@ -430,24 +427,19 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch derp_a10-user
+        
         make installclean && \
-        mka derp && \
-        lunch derp_a20-user
+        brunch a10 user && \
         make installclean && \
-        mka derp && \
-        lunch derp_a20e-user
+        brunch a20 user && \
         make installclean && \
-        mka derp && \
-        lunch derp_a30-user
+        brunch a20e user && \
         make installclean && \
-        mka derp && \
-        lunch derp_a30s-user
+        brunch a30 user && \
         make installclean && \
-        mka derp && \
-        lunch derp_a40-user
+        brunch a30s user && \
         make installclean && \
-        mka derp"
+        brunch a40 user"
       timeout-minutes: 2880
 
       # Send Build 'status' notification

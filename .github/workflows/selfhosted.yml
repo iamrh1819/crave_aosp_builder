@@ -436,19 +436,14 @@ jobs:
         make installclean && \
         rise sb || rise b && \
         riseup a20 user && \
-        make installclean && \
         rise sb || rise b && \
         riseup a20e user && \
-        make installclean && \
         rise sb || rise b && \
         riseup a30 user && \
-        make installclean && \
         rise sb || rise b && \
         riseup a30s user && \
-        make installclean && \
         rise sb || rise b && \
         riseup a40 user && \
-        make installclean && \
         rise sb || rise b"
         
       timeout-minutes: 2880

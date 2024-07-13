@@ -434,17 +434,17 @@ jobs:
         # Build the ROM
         riseup a10 user && \
         make installclean && \
-        rise sb || rise b && \
+        rise b && \
         riseup a20 user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a20e user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a30 user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a30s user && \
-        rise sb || rise b && \
+        rise b && \
         riseup a40 user && \
-        rise sb || rise b"
+        rise b"
         
       timeout-minutes: 2880
 

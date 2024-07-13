@@ -427,19 +427,19 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        brunch a10 user && \
+        lineage_a10-ap2a-user || brunch a10 user && \
         make installclean && \
-        mka bacon && \
-        brunch a20 user && \
-        mka bacon && \
-        brunch a20e user && \
-        mka bacon && \
-        brunch a30 user && \
-        mka bacon && \
-        brunch a30s user && \
-        mka bacon && \
-        brunch a40 user && \
-        mka bacon"
+        mka bacon || m bacon && \
+        lineage_a10-ap2a-user || brunch a20 user && \
+        mka bacon || m bacon && \
+        lineage_a10-ap2a-user || brunch a20e user && \
+        mka bacon || m bacon && \
+        lineage_a10-ap2a-user || brunch a30 user && \
+        mka bacon || m bacon && \
+        lineage_a10-ap2a-user || brunch a30s user && \
+        mka bacon || m bacon && \
+        lineage_a10-ap2a-user || brunch a40 user && \
+        mka bacon || m bacon"
         
       timeout-minutes: 2880
 

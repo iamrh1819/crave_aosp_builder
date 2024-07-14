@@ -261,7 +261,7 @@ jobs:
       REPO_INIT: ${{ needs.prepare.outputs.REPO_INIT }}
       
   build:
-    timeout-minutes: 2880      
+    timeout-minutes: 9999      
     name: Build using foss.crave.io
     needs: test 
     runs-on: self-hosted
@@ -441,7 +441,7 @@ jobs:
         lineage_a10-ap2a-user || brunch a40 user && \
         mka bacon || m bacon"
         
-      timeout-minutes: 2880
+      timeout-minutes: 9999
 
       # Send Build 'status' notification
     - name: Telegram Notification

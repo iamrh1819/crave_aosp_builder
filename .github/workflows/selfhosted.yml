@@ -265,7 +265,7 @@ jobs:
       
 
   build:
-    timeout-minutes: 99999      
+    timeout-minutes: 9999      
     name: Build using foss.crave.io
     needs: test 
     runs-on: self-hosted
@@ -442,7 +442,7 @@ jobs:
         make installclean && \
         rise b"
         
-      timeout-minutes: 99999
+      timeout-minutes: 9999
 
       # Send Build 'status' notification
     - name: Telegram Notification

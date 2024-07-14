@@ -415,6 +415,8 @@ jobs:
         # Sync the repositories
         /opt/crave/resync.sh  && \
         
+        repo forall -c 'git lfs install && git lfs pull && git lfs checkout' && \
+        
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
@@ -431,14 +433,19 @@ jobs:
         make installclean && \
         mka bacon || m bacon && \
         lineage_a10-ap2a-user || brunch a20 user && \
+        make installclean && \
         mka bacon || m bacon && \
         lineage_a10-ap2a-user || brunch a20e user && \
+        make installclean && \
         mka bacon || m bacon && \
         lineage_a10-ap2a-user || brunch a30 user && \
+        make installclean && \
         mka bacon || m bacon && \
         lineage_a10-ap2a-user || brunch a30s user && \
+        make installclean && \
         mka bacon || m bacon && \
         lineage_a10-ap2a-user || brunch a40 user && \
+        make installclean && \
         mka bacon || m bacon"
         
       timeout-minutes: 9999

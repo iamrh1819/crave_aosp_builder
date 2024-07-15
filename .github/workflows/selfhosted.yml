@@ -432,19 +432,10 @@ jobs:
         lineage_a10-ap2a-user || brunch a10 user && \
         make installclean && \
         mka bacon || m bacon && \
-        lineage_a10-ap2a-user || brunch a20 user && \
+        lineage_a20-ap2a-user || brunch a20 user && \
         make installclean && \
         mka bacon || m bacon && \
-        lineage_a10-ap2a-user || brunch a20e user && \
-        make installclean && \
-        mka bacon || m bacon && \
-        lineage_a10-ap2a-user || brunch a30 user && \
-        make installclean && \
-        mka bacon || m bacon && \
-        lineage_a10-ap2a-user || brunch a30s user && \
-        make installclean && \
-        mka bacon || m bacon && \
-        lineage_a10-ap2a-user || brunch a40 user && \
+        lineage_a20e-ap2a-user || brunch a20e user && \
         make installclean && \
         mka bacon || m bacon"
         

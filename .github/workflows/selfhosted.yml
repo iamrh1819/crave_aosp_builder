@@ -437,16 +437,8 @@ jobs:
         mka bacon && \
         lunch aosp_a20e-ap2a-user && \
         make installclean && \
-        mka bacon && \
-        lunch aosp_a30-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch aosp_a30s-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch aosp_a40-ap2a-user && \
-        make installclean && \
         mka bacon"
+        
       timeout-minutes: 9999
 
       # Send Build 'status' notification

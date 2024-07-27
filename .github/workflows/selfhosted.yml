@@ -421,14 +421,15 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export BLAZE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch blaze_a10-ap2a-user && \
+        riseup a10 user && \
         make installclean && \
         make bacon && \
         lunch blaze_a20-ap2a-user && \

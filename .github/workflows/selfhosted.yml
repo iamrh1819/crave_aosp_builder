@@ -431,13 +431,13 @@ jobs:
         # Build the ROM
         riseup a10 user && \
         make installclean && \
-        make bacon && \
-        lunch blaze_a20-ap2a-user && \
+        rise b && \
+        riseup a20 user && \
         make installclean && \
-        make bacon && \
-        lunch blaze_a20e-ap2a-user && \
+        rise b && \
+        riseup a20e user && \
         make installclean && \
-        make bacon"
+        rise b"
       timeout-minutes: 9999
 
       # Send Build 'status' notification (Success)

@@ -262,7 +262,7 @@ jobs:
       REPO_INIT: ${{ needs.prepare.outputs.REPO_INIT }}
       
   build:
-    timeout-minutes: 9999      
+    timeout-minutes: 1440
     name: Build using foss.crave.io
     needs: test 
     runs-on: self-hosted
@@ -429,16 +429,16 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lineage_a10-ap2a-user || brunch a10 user && \
+        lineage_a30-ap2a-user || brunch a30 user && \
         make installclean && \
         mka bacon || m bacon && \
-        lineage_a20-ap2a-user || brunch a20 user && \
+        lineage_a30s-ap2a-user || brunch a30s user && \
         make installclean && \
         mka bacon || m bacon && \
-        lineage_a20e-ap2a-user || brunch a20e user && \
+        lineage_a40-ap2a-user || brunch a40 user && \
         make installclean && \
         mka bacon || m bacon"
-      timeout-minutes: 9999
+      timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)
     - name: Telegram Notification

@@ -429,13 +429,13 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        riseup a10 user && \
+        riseup a30 user && \
         make installclean && \
         rise b && \
-        riseup a20 user && \
+        riseup a30s user && \
         make installclean && \
         rise b && \
-        riseup a20e user && \
+        riseup a40 user && \
         make installclean && \
         rise b"
       timeout-minutes: 9999

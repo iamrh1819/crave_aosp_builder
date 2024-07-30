@@ -262,7 +262,7 @@ jobs:
       REPO_INIT: ${{ needs.prepare.outputs.REPO_INIT }}
       
   build:
-    timeout-minutes: 9999      
+    timeout-minutes: 1440
     name: Build using foss.crave.io
     needs: test 
     runs-on: self-hosted
@@ -438,7 +438,7 @@ jobs:
         riseup a40 user && \
         make installclean && \
         rise b"
-      timeout-minutes: 9999
+      timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)
     - name: Telegram Notification

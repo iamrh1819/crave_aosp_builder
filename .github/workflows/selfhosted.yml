@@ -421,7 +421,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export AFTERLIFE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export AOSPA_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export DEVICE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
@@ -429,7 +429,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        goafterlife a10 user"
+        lunch aospa_a10-ap2a-user || brunch a10 user || aosp_a10-ap2a-user && \
+        make installclean && \
+        mka bacon"
         
         
       timeout-minutes: 1440

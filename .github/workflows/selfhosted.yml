@@ -417,7 +417,7 @@ jobs:
         
         # Sync the repositories
         /opt/crave/resync.sh  && \
-        repo forall -c 'git lfs install && git lfs pull && git lfs checkout' && \
+        
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
@@ -430,10 +430,10 @@ jobs:
 
         # Build the ROM
         
-        riseup a30s user && \
+        riseup a10 user && \
         make installclean && \
         rise b && \
-        riseup a40 user && \
+        riseup a30 user && \
         make installclean && \
         rise b"
       timeout-minutes: 1440

@@ -430,7 +430,10 @@ jobs:
 
         # Build the ROM
         
-        lineage_a30s-ap2a-user || brunch a30s user && \
+        lineage_a10-ap2a-user || brunch a10 user && \
+        make installclean && \
+        mka bacon || m bacon && \
+        lineage_a30-ap2a-user || brunch a30 user && \
         make installclean && \
         mka bacon || m bacon"
         

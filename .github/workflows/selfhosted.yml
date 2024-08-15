@@ -45,23 +45,7 @@ on:
         description: "Device's codename:"
         required: true
         default: "oxygen"
-      PRODUCT_NAME:
-        description: "Product to build:"
-        required: true
-        default: "oxygen"
-      BUILD_COMMAND:
-        description: 'Command to be used for compiling:'
-        required: true
-        default: 'mka bacon'
-      BUILD_TYPE:
-        description: 'Type of build:'
-        required: true
-        default: 'userdebug'
-        type: choice
-        options: 
-        - 'eng'
-        - 'userdebug'
-        - 'user' 
+      
       CLEAN_BUILD:
         description: 'Build with a clean workspace?'
         required: true
@@ -464,15 +448,16 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export MATRIXX_MAINTAINER=R A K I B ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        $LUNCH && \
+        lunch lineage_a10-user || lineage_a10-ap2a-user || brunch a10 user || breakfast a10 user && \
         make installclean && \
-        ${{ github.event.inputs.BUILD_COMMAND }}"
+        mka bacon || brunch a10 || make bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

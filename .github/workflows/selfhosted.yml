@@ -448,9 +448,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch lineage_a10-user || lineage_a10-ap2a-user || brunch a10 user || breakfast a10 user && \
+        lunch lineage_a10-user || lineage_a10-ap2a-user || brunch a10 user && \
         make installclean && \
-        mka bacon || brunch a10 || make bacon"
+        mka bacon || make bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

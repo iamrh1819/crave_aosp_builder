@@ -453,17 +453,9 @@ jobs:
         mka bacon || make bacon && \
         lunch lineage_a20-user || lineage_a20-ap2a-user || brunch a20 user && \
         make installclean && \
-        mka bacon || make bacon && \
-        lunch lineage_a20e-user || lineage_a20e-ap2a-user || brunch a20e user && \
-        make installclean && \
-        mka bacon || make bacon && \
-        
-        lunch lineage_a40-user || lineage_a40-ap2a-user || brunch a40 user && \
-        make installclean && \
-        mka bacon || make bacon && \
-        lunch lineage_a30s-user || lineage_a30s-ap2a-user || brunch a30s user && \
-        make installclean && \
         mka bacon || make bacon"
+        
+        
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

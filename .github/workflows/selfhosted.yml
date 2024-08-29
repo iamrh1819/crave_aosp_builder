@@ -441,19 +441,31 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export ALPHADROID_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export INFINITY_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch lineage_a30-user || lineage_a30-ap2a-user || brunch a30 user && \
+        lunch infinity_a10-user && \
         make installclean && \
-        mka bacon || make bacon && \
-        lunch lineage_a20-user || lineage_a20-ap2a-user || brunch a20 user && \
+        mka bacon && \
+        lunch infinity_a20-user && \
         make installclean && \
-        mka bacon || make bacon"
+        mka bacon && \
+        lunch infinity_a20e-user && \
+        make installclean && \
+        mka bacon && \
+        lunch infinity_a30-user && \
+        make installclean && \
+        mka bacon && \
+        lunch infinity_a30s-user && \
+        make installclean && \
+        mka bacon && \
+        lunch infinity_a40-user && \
+        make installclean && \
+        mka bacon"
         
         
       timeout-minutes: 1440

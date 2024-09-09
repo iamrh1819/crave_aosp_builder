@@ -441,7 +441,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export ALPHADROID_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
@@ -449,7 +449,7 @@ jobs:
 
         # Build the ROM
         
-        lunch lineage_a10-user || lineage_a10-ap2a-user || brunch a10 user && \
+        brunch a10 user && \
         make installclean && \
         mka bacon || make bacon"
         

@@ -458,6 +458,8 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
+        goafterlife a10 && \
+        make installclean && \
         goafterlife a20 && \
         make installclean && \
         goafterlife a20e && \

@@ -459,16 +459,15 @@ jobs:
 
         # Build the ROM
         goafterlife a10 && \
-        make installclean && \
+        
         goafterlife a20 && \
-        make installclean && \
+        
         goafterlife a20e && \
-        make installclean && \
+        
         goafterlife a30 && \
-        make installclean && \
-        goafterlife a30s && \
-        make installclean && \
-        goafterlife a40"
+        
+        goafterlife a30s"
+        
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

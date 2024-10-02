@@ -450,17 +450,17 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export PIXELAGE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export PIXELAGE_BUILD=a10 ; \
+        export EVEREST_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch pixelage_a10-ap2a-userdebug && \
+        lunch lineage_a10-userdebug || lunch lineage_a10-ap2a-userdebug || brunch a10 userdebug && \
         make installclean && \
-        mka bacon"
+        mka everest"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

@@ -451,6 +451,8 @@ jobs:
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         export EVEREST_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export WITH_GAPPS=false ; \
+        export WITH_GMS=false ; \
         
         source build/envsetup.sh && \
 

@@ -452,6 +452,7 @@ jobs:
         export BUILD_HOSTNAME=crave ; \
         export SAKURA_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export SAKURA_BUILD_TYPE=VIP-EDITION ; \
+        export SAKURA_OFFICIAL= true ; \
         
         source build/envsetup.sh && \
 
@@ -459,7 +460,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        
+        lunch lineage_a10-ap2a-userdebug && \
+        make installclean && \
+        mka bacon && \
         lunch lineage_a20-ap2a-userdebug && \
         make installclean && \
         mka bacon && \

@@ -453,6 +453,7 @@ jobs:
         export EVEREST_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export WITH_GAPPS=false ; \
         export WITH_GMS=false ; \
+        export TARGET_RELEASE=ap2a ; \
         
         source build/envsetup.sh && \
 
@@ -460,7 +461,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch lineage_a10-userdebug || lunch lineage_a10-ap2a-userdebug || brunch a10 userdebug && \
+        lunch lineage_a10-userdebug && \
         make installclean && \
         mka everest"
       timeout-minutes: 1440

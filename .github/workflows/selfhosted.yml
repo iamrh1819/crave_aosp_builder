@@ -461,7 +461,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch lineage_a10-user && \
+        lunch lineage_a10-userdebug || lunch lineage_a10-ap2a-userdebug || breakfast a10 userdebug && \
         make installclean && \
         mka everest"
       timeout-minutes: 1440

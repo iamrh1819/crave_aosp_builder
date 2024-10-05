@@ -457,7 +457,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        brunch a10"
+        ./rom-build.sh a10"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

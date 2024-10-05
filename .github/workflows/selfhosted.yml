@@ -450,11 +450,6 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export EVEREST_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export WITH_GAPPS=false ; \
-        export WITH_GMS=false ; \
-        export TARGET_RELEASE=ap2a ; \
-        export EVEREST_BUILD_TYPE=OFFICIAL ; \
         
         source build/envsetup.sh && \
 
@@ -462,9 +457,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch everest_a10-ap2a-user && \
-        make installclean && \
-        mka everest"
+        brunch a10"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

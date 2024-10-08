@@ -450,16 +450,15 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export SUPERIOR_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
-        export SUPERIOR_BUILD_TYPE=OFFICIAL ; \
+        export TENX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export TENX_BUILD_TYPE=OFFICIAL ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        breakfast a10 && \
-        m bacon"
+        brunch a10"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

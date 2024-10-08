@@ -452,6 +452,8 @@ jobs:
         export BUILD_HOSTNAME=crave ; \
         export TENX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         export TENX_BUILD_TYPE=OFFICIAL ; \
+        export WITH_GMS=false ; \
+        export WITH_GAPPS=false ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \

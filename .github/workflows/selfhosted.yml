@@ -105,7 +105,16 @@ jobs:
 
     - name: Run crave devspace
       run: |
-        crave ${{ secrets.CRAVE_FLAGS }} devspace -- "if tmux has-session -t ghactions; then 
+        crave ${{ secrets.CRAVE_FLAGS }} devspace -- "echo "Looking for runner..."
+          # Look for whether there's a runner folder set up
+          if [ -f actions-runner/run.sh ] ; then
+            echo "Runner found! Restarting it..."
+          else
+            echo "Error! Runner not found!"
+            exit 1
+          fi
+
+        if tmux has-session -t ghactions; then 
           echo "Runner is already Running" 
         else 
           tmux kill-session -t ghactions;
@@ -368,7 +377,7 @@ jobs:
         else
           echo "We are already running in devspace... Skipping Symlinks"
         fi
-        if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') && [[ "${DCDEVSPACE}" == "1" ]]; then
+        if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') || [[ "${DCDEVSPACE}" == "1" ]]; then
           crave clone destroy -y $PROJECTFOLDER || echo "Error removing $PROJECTFOLDER"
         else          
         echo "Skipping removal"
@@ -429,7 +438,7 @@ jobs:
     - name: Set the 'crave' project
       run: |
         cd $PROJECTFOLDER
-        if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') && [[ "${DCDEVSPACE}" == "1" ]]; then
+        if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') || [[ "${DCDEVSPACE}" == "1" ]]; then
           echo "Using Crave Clone... skipping"
         else
           echo "Running $REPO_INIT"
@@ -571,7 +580,7 @@ jobs:
     - name: Destroy Crave Clone
       if: ${{ always() }}
       run: |
-        if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') && [[ "${DCDEVSPACE}" == "1" ]]; then
+        if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') || [[ "${DCDEVSPACE}" == "1" ]]; then
           crave clone destroy -y $PROJECTFOLDER || echo "Error removing $PROJECTFOLDER"
         else          
           echo "Skipping removal"

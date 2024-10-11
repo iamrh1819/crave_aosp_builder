@@ -43,7 +43,7 @@ jobs:
       # Start 'runner' in 'tmux'.
     - name: Run crave devspace
       run: |
-          if tmux has-session -t ghactions; then 
+          if [tmux has-session -t ghactions]; then 
           echo "Runner is already Running" 
           else
           tmux kill-session -t ghactions;

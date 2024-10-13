@@ -459,19 +459,35 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        ORION_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
-        ORION_MAINTAINER_LINK= <t.me/iamr1819> ; \
-        ORION_BUILD_TYPE=OFFICIAL ; \
-        ORION_GAPPS=false ; \
+        PIXELOS_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
+        PIXELOS_BUILD_TYPE=OFFICIAL ; \
+        export WITH_GMS=false ; \
+        export WITH_GAPPS=false ; \
+        export TARGET_USES_PICO_GAPPS=true ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch orion_a10-ap2a-user || brunch a10 && \
+        lunch aosp_a20-ap2a-user && \
         make installclean && \
-        mka space || mka bacon"
+        mka bacon && \
+        lunch aosp_a20s-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a30-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a30s-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a40-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a10-ap2a-user && \
+        make installclean && \
+        mka bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

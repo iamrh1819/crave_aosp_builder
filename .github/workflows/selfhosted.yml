@@ -451,13 +451,21 @@ jobs:
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         export MATRIXX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export WITH_GAPPS=true ; \
+        export WITH_GMS=true ; \
+        export MATRIXX_BUILD_TYPE=OFFICIAL ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        brunch a10"
+        brunch a10 && \
+        brunch a20 && \
+        brunch a20e && \
+        brunch a30 && \
+        brunch a30s && \
+        brunch a40"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

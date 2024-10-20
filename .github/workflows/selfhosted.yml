@@ -461,11 +461,10 @@ jobs:
 
         # Build the ROM
         
-        brunch a30 && \
+        brunch a10 && \
         make installclean && \
-        brunch a30s && \
-        make installclean && \
-        brunch a40"
+        brunch a20e"
+        
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

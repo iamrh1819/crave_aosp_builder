@@ -462,8 +462,11 @@ jobs:
         # Build the ROM
         
         brunch a10 && \
-        make installclean && \
-        brunch a20e"
+        brunch a20e && \
+        brunch a30 && \
+        brunch a30s"
+
+        
         
       timeout-minutes: 1440
 

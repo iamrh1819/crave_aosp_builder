@@ -460,11 +460,11 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        brunch a10 && \
-        brunch a20 && \
-        brunch a20e && \
+        
         brunch a30 && \
+        make installclean && \
         brunch a30s && \
+        make installclean && \
         brunch a40"
       timeout-minutes: 1440
 

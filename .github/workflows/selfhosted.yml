@@ -461,7 +461,7 @@ jobs:
 
         # Build the ROM
         
-        brunch a10 && \
+        
         brunch a20e && \
         brunch a30 && \
         brunch a30s"

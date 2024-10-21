@@ -460,7 +460,7 @@ jobs:
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         ORION_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
-        ORION_MAINTAINER_LINK= <t.me/iamr1819> ; \
+        ORION_MAINTAINER_LINK= t.me/iamr1819 ; \
         ORION_BUILD_TYPE=OFFICIAL ; \
         ORION_GAPPS=false ; \
         source build/envsetup.sh && \

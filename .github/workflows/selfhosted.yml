@@ -471,7 +471,7 @@ jobs:
         # Build the ROM
         lunch orion_a30-ap2a-userdebug && \
         make installclean && \
-        mka bacon"
+        mka space"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

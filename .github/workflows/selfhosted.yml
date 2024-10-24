@@ -459,19 +459,13 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        ORION_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
-        ORION_MAINTAINER_LINK= t.me/iamr1819 ; \
-        ORION_BUILD_TYPE=OFFICIAL ; \
-        ORION_GAPPS=false ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch orion_a30-ap2a-userdebug && \
-        make installclean && \
-        mka space"
+        blissify -m a10"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

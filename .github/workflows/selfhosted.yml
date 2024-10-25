@@ -465,7 +465,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        blissify -m a10"
+        blissify -m a10 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

@@ -433,6 +433,7 @@ jobs:
         
         riseup a10 user && \
         make installclean && \
+        gk -s && \
         rise b"
         
       timeout-minutes: 1440

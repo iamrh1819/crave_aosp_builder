@@ -434,6 +434,26 @@ jobs:
         riseup a10 user && \
         make installclean && \
         gk -s && \
+        rise b && \
+        riseup a20 user && \
+        make installclean && \
+        gk -s && \
+        rise b && \
+        riseup a20e user && \
+        make installclean && \
+        gk -s && \
+        rise b && \
+        riseup a30 user && \
+        make installclean && \
+        gk -s && \
+        rise b && \
+        riseup a30s user && \
+        make installclean && \
+        gk -s && \
+        rise b && \
+        riseup a40 user && \
+        make installclean && \
+        gk -s && \
         rise b"
         
       timeout-minutes: 1440

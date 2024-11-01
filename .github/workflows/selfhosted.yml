@@ -457,7 +457,15 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch lineage_a10-user || breakfast a10 user && \
+        lunch lineage_a20-user || breakfast a20 user && \
+        mka bacon && \
+        lunch lineage_a20e-user || breakfast a20e user && \
+        mka bacon && \
+        lunch lineage_a30-user || breakfast a30 user && \
+        mka bacon && \
+        lunch lineage_a30s-user || breakfast a30s user && \
+        mka bacon && \
+        lunch lineage_a40-user || breakfast a40 user && \
         mka bacon"
 
 

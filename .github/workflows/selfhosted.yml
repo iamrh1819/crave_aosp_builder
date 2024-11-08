@@ -450,7 +450,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export DEVICE_MAINTAINER= Iverz ; \
+        export DEVICE_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
         export DEVICE_MAINTAINER_LINK= https://t.me/iamr1819 ; \
         source build/envsetup.sh && \
 

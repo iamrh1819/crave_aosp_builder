@@ -450,33 +450,31 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export DEVICE_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
-        export DEVICE_MAINTAINER_LINK= https://t.me/iamr1819 ; \
+        export DROIDX_MAINTAINER= Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        lunch arrow_a10-user && \
+        lunch droidx_a10-ap2a-user && \
         make installclean && \
         m bacon && \
-        lunch arrow_a20-user && \
+        lunch droidx_a20-ap2a-user && \
         make installclean && \
         m bacon && \
-        lunch arrow_a20e-user && \
+        lunch droidx_a20e-ap2a-user && \
         make installclean && \
         m bacon && \
-        lunch arrow_a30-user && \
+        lunch droidx_a30-ap2a-user && \
         make installclean && \
         m bacon && \
-        lunch arrow_a30s-user && \
+        lunch droidx_a30s-ap2a-user && \
         make installclean && \
         m bacon && \
-        lunch arrow_a40-user && \
+        lunch droidx_a40-ap2a-user && \
         make installclean && \
         m bacon"
-
 
       timeout-minutes: 1440
 

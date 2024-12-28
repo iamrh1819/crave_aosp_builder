@@ -479,6 +479,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export WITH_GMS=true ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \

@@ -480,6 +480,7 @@ jobs:
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         export WITH_GMS=true ; \
+        export MISTOS_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
@@ -487,6 +488,16 @@ jobs:
 
         # Build the ROM
         mistify a20 user && \
+        mist b && \
+        mistify a20e user && \
+        mist b && \
+        mistify a30 user && \
+        mist b && \
+        mistify a30s user && \
+        mist b && \
+        mistify a40 user && \
+        mist b && \
+        mistify a10 user && \
         mist b"
       timeout-minutes: 1440
 

@@ -488,8 +488,7 @@ jobs:
 
         # Build the ROM
         
-        mistify a30s user && \
-        mist b && \
+        
         mistify a40 user && \
         mist b && \
         mistify a10 user && \

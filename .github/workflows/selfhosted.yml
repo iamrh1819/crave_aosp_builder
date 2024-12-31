@@ -487,12 +487,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        mistify a20 user && \
-        mist b && \
-        mistify a20e user && \
-        mist b && \
-        mistify a30 user && \
-        mist b && \
+        
         mistify a30s user && \
         mist b && \
         mistify a40 user && \

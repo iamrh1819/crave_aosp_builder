@@ -489,10 +489,9 @@ jobs:
         # Build the ROM
         
         
-        mistify a40 user && \
-        mist b && \
-        mistify a10 user && \
+        mistify a20 user && \
         mist b"
+        
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

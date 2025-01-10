@@ -480,16 +480,28 @@ jobs:
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         export WITH_GMS=true ;
-        export RISING_MAINTAINER=Ʀᴀ㉿ɪƁ ;
+        export PIXELOS_MAINTAINER=Ʀᴀ㉿ɪƁ ;
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        riseup a20 user && \
-        gk -s && \
-        rise b"
+        lunch aosp_a20-ap4a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a20e-ap4a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a30-ap4a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a40-ap4a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch aosp_a10-ap4a-user && \
+        make installclean && \
+        mka bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

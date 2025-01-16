@@ -480,7 +480,7 @@ jobs:
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
         export WITH_GMS=true ;
-        export FLARE_MAINTAINER=Ʀᴀ㉿ɪƁ ;
+        export SUPERIOR_MAINTAINER=Ʀᴀ㉿ɪƁ ;
         export BLAZE_MAINTAINER=Ʀᴀ㉿ɪƁ ;
         source build/envsetup.sh && \
 
@@ -490,24 +490,8 @@ jobs:
         # Build the ROM
         
         
-        lunch flare_a20-ap4a-user && \
-        make installclean && \
-        make bacon && \
-        lunch flare_a20e-ap4a-user && \
-        make installclean && \
-        make bacon && \
-        lunch flare_a40-ap4a-user && \
-        make installclean && \
-        make bacon && \
-        lunch flare_a30-ap4a-user && \
-        make installclean && \
-        make bacon && \
-        lunch flare_a10-ap4a-user && \
-        make installclean && \
-        make bacon && \
-        lunch flare_a30s-ap4a-user && \
-        make installclean && \
-        make bacon"
+        breakfast a20 user &&\
+        m superior"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

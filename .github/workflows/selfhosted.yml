@@ -475,15 +475,11 @@ jobs:
         else
           /opt/crave/resync.sh
         fi && \
-        rm -rf vendor/gms && \
-        rm -rf .repo/projects/vendor/gms.git && \
-        rm -rf .repo/project-objects/*/android_vendor_gms.git && \
+        
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export WITH_GMS=false ;
-        export WITH_GAPPS=false ;
-        export PIXELOS_MAINTAINER=Ʀᴀ㉿ɪƁ ;
+        
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
@@ -491,7 +487,22 @@ jobs:
 
         # Build the ROM
         
-        lunch aosp_a10-ap2a-user && \
+        lunch lineage_a10-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch lineage_a20-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch lineage_a20e-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch lineage_a30-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch lineage_a30s-ap2a-user && \
+        make installclean && \
+        mka bacon && \
+        lunch lineage_a40-ap2a-user && \
         make installclean && \
         mka bacon"
       timeout-minutes: 1440

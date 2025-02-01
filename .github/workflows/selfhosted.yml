@@ -487,24 +487,7 @@ jobs:
 
         # Build the ROM
         
-        lunch lineage_a10-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch lineage_a20-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch lineage_a20e-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch lineage_a30-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch lineage_a30s-ap2a-user && \
-        make installclean && \
-        mka bacon && \
-        lunch lineage_a40-ap2a-user && \
-        make installclean && \
-        mka bacon"
+        brunch a20 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

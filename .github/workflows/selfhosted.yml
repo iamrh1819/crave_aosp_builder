@@ -487,7 +487,12 @@ jobs:
 
         # Build the ROM
         
-        brunch a20 user"
+        brunch a10 user && \
+        brunch a20 user && \
+        brunch a20e user && \
+        brunch a30 user && \
+        brunch a30s user && \
+        brunch a40 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

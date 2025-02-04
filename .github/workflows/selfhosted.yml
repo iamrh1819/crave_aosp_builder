@@ -488,8 +488,8 @@ jobs:
         # Build the ROM
         
         
-        brunch a30s user && \
-        brunch a40 user"
+        brunch a40 user && \
+        brunch a30s user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

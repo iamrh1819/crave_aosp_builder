@@ -479,7 +479,7 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        
+        export AFTERLIFE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
@@ -488,8 +488,7 @@ jobs:
         # Build the ROM
         
         
-        brunch a40 user && \
-        brunch a30s user"
+        goafterlife a20 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

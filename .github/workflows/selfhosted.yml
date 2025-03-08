@@ -492,9 +492,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        blkilunch a20 user && \
+        axion a20 user && \
         make installclean && \
-        blki b"
+        mka bacon"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

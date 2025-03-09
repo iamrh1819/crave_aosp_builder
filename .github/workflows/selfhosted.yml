@@ -486,15 +486,15 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
+        export AFTERLIFE_BUILD_TYPE=OFFICIAL ; \
+        export AFTERLIFE_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        blkilunch a20 user && \
-        make installclean && \
-        blki b"
+        goafterlife a20 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

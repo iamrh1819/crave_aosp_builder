@@ -494,7 +494,9 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        breakfast a30 user"
+        orion_a30-ap2a-user || orion_a30-ap3a-user  && \
+        make installclean && \
+        mka space"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

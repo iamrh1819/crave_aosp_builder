@@ -488,7 +488,7 @@ jobs:
         export BUILD_HOSTNAME=crave ; \
         export MATRIXX_BUILD_TYPE=COFFEECIAL 💀 ; \
         export MATRIXX_MAINTAINER=Ʀᴀ㉿ɪƁ 👑 ; \
-        export MATRIXX_CHIPSET=$exynos7885 👽 ; \
+        export MATRIXX_CHIPSET=SEXYNOS7885 👽 ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \

@@ -486,17 +486,15 @@ jobs:
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
-        export ORION_BUILD_TYPE=OFFICIAL ; \
-        export ORION_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
+        export MATRIXX_BUILD_TYPE=SUSS 💀 ; \
+        export MATRIXX_MAINTAINER=Ʀᴀ㉿ɪƁ ; \
         source build/envsetup.sh && \
 
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        orion_a30-ap2a-userdebug || orion_a30-ap3a-userdebug  && \
-        make installclean && \
-        mka space"
+        brunch a20 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

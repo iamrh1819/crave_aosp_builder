@@ -496,7 +496,7 @@ jobs:
 
         # Build the ROM
         
-        brunch a30s user"
+        brunch a30 user"
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)

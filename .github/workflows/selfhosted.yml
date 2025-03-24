@@ -488,7 +488,7 @@ jobs:
 
         # Build the ROM
         
-        mistify a20 user && \
+        mistify a30 user && \
         mist b"
         
         

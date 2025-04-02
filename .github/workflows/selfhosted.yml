@@ -494,10 +494,8 @@ jobs:
         # Build the ROM
         axion a20 user && \
         make installclean && \
-        mka bacon && \
-        axion a30 user && \
-        make installclean && \
         mka bacon"
+        
       timeout-minutes: 1440
 
       # Send Build 'status' notification (Success)
